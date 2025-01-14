@@ -1,7 +1,7 @@
 import React from 'react';
 const CategoryButton = ({ label }: { label: string }) => (
     <div className='flex flex-col'>
-        <div className='border-[1px] rounded-md border-black h-[3rem] justify-center items-center mb-6 flex cursor-pointer p-7 py-5 text-nowrap mobile:p-6 mobile:py-3'>
+        <div className='border-[1px] rounded-md border-black h-[3rem] justify-center items-center mb-6 flex cursor-pointer p-7 py-5 text-nowrap mobile:p-6 mobile:py-3 mobile:no-scrollbar tablet:no-scrollbar'>
             <p className='text-center text-sm font-normal'>{label}</p>
         </div>
     </div>
