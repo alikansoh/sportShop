@@ -1,20 +1,20 @@
-'use client'
-import Image from "next/image";
-import React, { use, useState } from "react";
-import navdata from "../fakeData/navData";
+'use client';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import navdata from '../fakeData/navData';
 
-// Modify the SubCategory interface to allow subCategories to be an optional array or undefined
 interface SubCategory {
     name: string;
-    subCategories?: SubCategory[]; // subCategories is now optional
+    subCategories?: SubCategory[];
     image?: string;
 }
 
 interface NavItem {
     name: string;
-    subCategories?: SubCategory[]; // subCategories is now optional
+    subCategories?: SubCategory[];
     image?: string;
 }
+
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -26,16 +26,7 @@ const Navbar: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<NavItem | null>(null);
 
     const toggleNavbar = () => {
-        if (isOpen2) {
-            setIsOpen(false);
-        } else {
-            setIsOpen(!isOpen);
-        }
-        if (isOpen3) {
-            setIsOpen(false);
-        } else {
-            setIsOpen(!isOpen);
-        }
+        setIsOpen(!isOpen);
         setIsOpen2(false);
         setIsOpen3(false);
     };
@@ -51,13 +42,13 @@ const Navbar: React.FC = () => {
         setIsOpen(false);
         setIsOpen3(false);
     };
+
     const toggleNavbar3 = () => {
         setIsOpen3(!isOpen3);
         setIsOpen(false);
         setIsOpen2(false);
     };
 
-    // Show the under navbar content
     const showUnderNav = () => {
         setIsUnderNav(true);
     };
@@ -65,6 +56,7 @@ const Navbar: React.FC = () => {
     const hideUnderNav = () => {
         setIsUnderNav(false);
     };
+
     const toggleback1 = () => {
         setIsOpen3(!isOpen3);
         setIsOpen(false);
@@ -76,7 +68,7 @@ const Navbar: React.FC = () => {
             <div className="bg-black h-18 flex items-center px-3 justify-between flex-wrap tablet:gap-x-0 mobile:pt-2 tablet:pt-2">
                 {/* Burger Icon */}
                 <Image
-                    src={isOpen || isOpen2 || isOpen3 ? "images/x.svg" : "images/burger.svg"}
+                    src={isOpen || isOpen2 || isOpen3 ? 'images/x.svg' : 'images/burger.svg'}
                     alt="burger"
                     className="h-7 lg:hidden pl-0"
                     onClick={toggleNavbar}
@@ -156,13 +148,10 @@ const Navbar: React.FC = () => {
                 {navdata.map((item, index) => (
                     <ul key={index} className="">
                         <li
-                            key={item.name}
                             className="relative group w-auto"
-                            onMouseLeave={() => {
-                                hideUnderNav();
-                            }}
+                            onMouseLeave={hideUnderNav}
                             onMouseEnter={() => {
-                                setSelectedItem(item);
+                                setSelectedItem(item as unknown as NavItem);
                                 showUnderNav();
                             }}
                         >
@@ -174,29 +163,22 @@ const Navbar: React.FC = () => {
                             </a>
                         </li>
                         <div
-                            className={`flex w-full bg-white z-10 absolute top-50 left-0 right-0 gap-5 justify-center flex-wrap space-x-4 transition-opacity duration-300 ${isUnderNav ? "opacity-100" : "opacity-0 lg:hidden"
-                                }`}
-                            onMouseEnter={() => {
-                                showUnderNav();
-                            }}
-                            onMouseLeave={() => {
-                                hideUnderNav();
-                            }}
+                            className={`flex w-full bg-white z-10 absolute top-50 left-0 right-0 gap-5 justify-center flex-wrap space-x-4 transition-opacity duration-300 ${isUnderNav ? 'opacity-100' : 'opacity-0 lg:hidden'}`}
+                            onMouseEnter={showUnderNav}
+                            onMouseLeave={hideUnderNav}
                         >
-                            {selectedItem?.subCategories &&
-                                selectedItem.subCategories.map((item: NavItem, index: number) => (
-                                    <section key={index} className="p-4 font-bold w-auto text-black">
-                                        {item.name}
-                                        <section>
-                                            {item.subCategories &&
-                                                item.subCategories.map((item, index) => (
-                                                    <section key={index} className="font-normal text-sm text-black mt-2">
-                                                        {item.name}
-                                                    </section>
-                                                ))}
-                                        </section>
+                            {selectedItem?.subCategories?.map((subItem, subIndex) => (
+                                <section key={subIndex} className="p-4 font-bold w-auto text-black">
+                                    {subItem.name}
+                                    <section>
+                                        {subItem.subCategories?.map((subSubItem, subSubIndex) => (
+                                            <section key={subSubIndex} className="font-normal text-sm text-black mt-2">
+                                                {subSubItem.name}
+                                            </section>
+                                        ))}
                                     </section>
-                                ))}
+                                </section>
+                            ))}
                         </div>
                     </ul>
                 ))}
@@ -204,21 +186,16 @@ const Navbar: React.FC = () => {
 
             {/* Navbar for Mobile */}
             <nav
-                className={`lg:hidden fixed top-30 left-0 z-50 bg-white w-full p-2 pb-4 overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0 "
-                    }`}
+                className={`lg:hidden fixed top-30 left-0 z-50 bg-white w-full p-2 pb-4 overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}
             >
                 <ul className="flex flex-col items-center gap-5 mobile:items-start tablet:items-start">
-                    {/* Mobile Menu */}
-                    {navdata?.map((item, index) => (
+                    {navdata.map((item, index) => (
                         <li
                             key={index}
-                            className={`relative group w-full ${item.name === "Sale" || item.name === "sale"
-                                ? "bg-red-600 text-white"
-                                : ""
-                                }`}
+                            className={`relative group w-full ${item.name === 'Sale' || item.name === 'sale' ? 'bg-red-600 text-white' : ''}`}
                             onClick={() => {
                                 toggleNavbar2();
-                                setSelectedDropdown(item); // Set the selected dropdown
+                                setSelectedDropdown(item as unknown as SubCategory);
                             }}
                         >
                             <a
@@ -236,7 +213,7 @@ const Navbar: React.FC = () => {
                                     {item.name}
                                 </span>
                                 <span className="font-bold text-xl absolute right-6">
-                                    {">"}
+                                    {'>'}
                                 </span>
                             </a>
                         </li>
@@ -259,85 +236,79 @@ const Navbar: React.FC = () => {
 
             {/* Submenu for Mobile */}
             <nav
-                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen2 ? "translate-x-100" : "translate-x-full "
-                    }`}
-                style={{ maxHeight: "80vh" }}
+                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen2 ? 'translate-x-0' : 'translate-x-full'}`}
+                style={{ maxHeight: '80vh' }}
             >
                 <section className="flex justify-between items-center p-5 tablet:text-xl">
                     <p className="text-black tablet:text-xl" onClick={toggleback}>
-                        {"<"}
+                        {'<'}
                         <span className="font-bold pl-5 tablet:text-xl">
                             {selectedDropdown?.name}
-                        </span>{" "}
+                        </span>
                     </p>
                     <p className="text-blue-700 border-b-blue-700 border-b-2 text-sm font-semibold tablet:text-xl">
                         View All
                     </p>
                 </section>
                 <ul className="flex flex-col items-center gap-5 mobile:items-start mt-4 tablet:items-start">
-                    {/* Mobile Dropdown Menu */}
-                    {selectedDropdown &&
-                        selectedDropdown?.subCategories?.map((item: NavItem, index: number) => (
-                            <li key={index} className="group w-full relative">
-                                <a
-                                    href="#"
-                                    className="flex p-4 lg:inline-flex items-center  border-b  border-b-gray-200"
-                                    onClick={() => {
-                                        toggleNavbar3();
-                                        setSelectedDropdown2(item);
-                                    }}
-                                >
-                                    {item.image && (
-                                        <Image
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="w-[2.5rem] mobile:h-[2.5rem] rounded-sm tablet:w-[3.5rem] tablet:h-[3.5rem]"
-                                        />
-                                    )}
-                                    <span className="ml-4 :text-black font-bold text-sm tablet:text-xl">
-                                        {item.name}
-                                    </span>
-                                    <span className="font-bold text-black text-xl absolute right-6">
-                                        {">"}
-                                    </span>
-                                </a>
-                            </li>
-                        ))}
+                    {selectedDropdown?.subCategories?.map((item, index) => (
+                        <li key={index} className="group w-full relative">
+                            <a
+                                href="#"
+                                className="flex p-4 lg:inline-flex items-center border-b border-b-gray-200"
+                                onClick={() => {
+                                    toggleNavbar3();
+                                    setSelectedDropdown2(item);
+                                }}
+                            >
+                                {item.image && (
+                                    <Image
+                                        src={item.image}
+                                        alt={item.name}
+                                        className="w-[2.5rem] mobile:h-[2.5rem] rounded-sm tablet:w-[3.5rem] tablet:h-[3.5rem]"
+                                    />
+                                )}
+                                <span className="ml-4 text-black font-bold text-sm tablet:text-xl">
+                                    {item.name}
+                                </span>
+                                <span className="font-bold text-black text-xl absolute right-6">
+                                    {'>'}
+                                </span>
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </nav>
 
             {/* Third-level Submenu for Mobile */}
             <nav
-                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen3 ? "translate-x-100" : "translate-x-full "
-                    }`}
-                style={{ maxHeight: "80vh" }}
+                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen3 ? 'translate-x-0' : 'translate-x-full'}`}
+                style={{ maxHeight: '80vh' }}
             >
                 <section className="flex justify-between items-center p-5">
                     <p className="text-black tablet:text-xl" onClick={toggleback1}>
-                        {"<"}
+                        {'<'}
                         <span className="font-bold pl-5 tablet:text-xl">
                             {selectedDropdown2?.name}
-                        </span>{" "}
+                        </span>
                     </p>
                     <p className="text-blue-700 border-b-blue-700 border-b-2 text-sm font-semibold tablet:text-xl">
                         View All
                     </p>
                 </section>
                 <ul className="flex flex-col gap-5 items-start mt-4">
-                    {/* Mobile Dropdown Menu */}
-                    {selectedDropdown2 &&
-                        selectedDropdown2?.subCategories?.map((item: NavItem, index: number) => (
-                            <li key={index} className="group w-full relative">
-                                <a
-                                    href="#"
-                                    className="flex p-4 lg:inline-flex items-center  hover:text-white border-b border-b-gray-200"
-                                >
-                                    <span className="ml-4 text-black mobile:font-bold text-sm tablet:text-xl">
-                                        {item.name}
-                                    </span>
-                                </a>
-                            </li>
-                        ))}
+                    {selectedDropdown2?.subCategories?.map((item, index) => (
+                        <li key={index} className="group w-full relative">
+                            <a
+                                href="#"
+                                className="flex p-4 lg:inline-flex items-center hover:text-white border-b border-b-gray-200"
+                            >
+                                <span className="ml-4 text-black font-bold text-sm tablet:text-xl">
+                                    {item.name}
+                                </span>
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </div>
