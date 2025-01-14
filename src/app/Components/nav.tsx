@@ -1,17 +1,18 @@
 'use client'
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import navdata from "../fakeData/navData";
 
+// Modify the SubCategory interface to allow subCategories to be an optional array or undefined
 interface SubCategory {
     name: string;
-    subCategories?: SubCategory[];
+    subCategories?: SubCategory[]; // subCategories is now optional
     image?: string;
 }
 
 interface NavItem {
     name: string;
-    subCategories?: SubCategory[];
+    subCategories?: SubCategory[]; // subCategories is now optional
     image?: string;
 }
 
@@ -71,8 +72,8 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50  ">
-            <div className="bg-black h-18 flex items-center px-3 justify-between  flex-wrap  tablet:gap-x-0 mobile:pt-2 tablet:pt-2   ">
+        <div className="fixed top-0 left-0 right-0 z-50">
+            <div className="bg-black h-18 flex items-center px-3 justify-between flex-wrap tablet:gap-x-0 mobile:pt-2 tablet:pt-2">
                 {/* Burger Icon */}
                 <Image
                     src={isOpen || isOpen2 || isOpen3 ? "images/x.svg" : "images/burger.svg"}
@@ -87,13 +88,13 @@ const Navbar: React.FC = () => {
                 <Image
                     src="/images/logo.svg"
                     alt="logo"
-                    className="h-10 tablet:h-12  "
+                    className="h-10 tablet:h-12"
                     width={100}
                     height={100}
                 />
 
                 {/* Search Input */}
-                <div className="relative lg:w-[37%] mobile:order-2  py-4 mobile:py-2 tablet:order-2 tablet:w-full mobile:w-full ">
+                <div className="relative lg:w-[37%] mobile:order-2 py-4 mobile:py-2 tablet:order-2 tablet:w-full mobile:w-full">
                     <input
                         type="text"
                         placeholder="Search Products or Categories"
@@ -118,13 +119,13 @@ const Navbar: React.FC = () => {
                 </div>
 
                 {/* Icons - Bag, Favorite, User */}
-                <div className="flex gap-2  items-center tablet:gap-6  mobile:h-12 ">
+                <div className="flex gap-2 items-center tablet:gap-6 mobile:h-12">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        className="w-8 h-8 text-white mobile:hidden "
+                        className="w-8 h-8 text-white mobile:hidden"
                     >
                         <path
                             strokeLinecap="round"
@@ -206,7 +207,7 @@ const Navbar: React.FC = () => {
                 className={`lg:hidden fixed top-30 left-0 z-50 bg-white w-full p-2 pb-4 overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0 "
                     }`}
             >
-                <ul className="flex flex-col items-center gap-5 mobile:items-start tablet:items-start ">
+                <ul className="flex flex-col items-center gap-5 mobile:items-start tablet:items-start">
                     {/* Mobile Menu */}
                     {navdata?.map((item, index) => (
                         <li
@@ -262,7 +263,7 @@ const Navbar: React.FC = () => {
                     }`}
                 style={{ maxHeight: "80vh" }}
             >
-                <section className="flex justify-between items-center p-5 tablet:text-xl ">
+                <section className="flex justify-between items-center p-5 tablet:text-xl">
                     <p className="text-black tablet:text-xl" onClick={toggleback}>
                         {"<"}
                         <span className="font-bold pl-5 tablet:text-xl">
@@ -273,7 +274,7 @@ const Navbar: React.FC = () => {
                         View All
                     </p>
                 </section>
-                <ul className="flex flex-col items-center gap-5 mobile:items-start mt-4 tablet:items-start ">
+                <ul className="flex flex-col items-center gap-5 mobile:items-start mt-4 tablet:items-start">
                     {/* Mobile Dropdown Menu */}
                     {selectedDropdown &&
                         selectedDropdown?.subCategories?.map((item: NavItem, index: number) => (
