@@ -39,3 +39,10 @@
   }
 
 }
+@media screen and (max-width: 768px) {
+
+  .custom-scrollbar {
+  display: hidden;
+  display: none;
+  }
+}
