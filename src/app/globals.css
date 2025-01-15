@@ -32,14 +32,14 @@
   scrollbar-color: #134aa3 #e5e7eb; /* Firefox custom scrollbar colors */
 }
 /* Hide the scrollbar but keep the scrolling functionality */
-@media (max-width: 640px) {
-  no-scrollbar::-webkit-scrollbar {
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
     display: none;
-}
+  }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

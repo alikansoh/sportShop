@@ -11,7 +11,7 @@ export const HomeImagesFilter = () => {
     const categories = ['Mens', 'Womens', 'Kids', 'Trainers', 'Football', 'Running', 'Training', 'Daily Deal'];
 
     return (
-<div className="flex flex-row gap-2 justify-center mobile:justify-start tablet:justify-start scrollbar custom-scrollbar lg:mx-2 overflow-x-scroll">
+<div className="flex flex-row gap-2 justify-center mobile:justify-start mobile:overflow-x-hidden tablet:overflow-x-scroll tablet:justify-start tablet:mx-3 scrollbar custom-scrollbar lg:mx-2">
             {categories.map((category) => (
                 <CategoryButton key={category} label={category} />
             ))}
