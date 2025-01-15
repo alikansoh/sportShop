@@ -33,15 +33,13 @@
 }
 /* Hide the scrollbar but keep the scrolling functionality */
 @media (max-width: 640px) {
-  .mobile\:overflow-x-scroll {
-      overflow-x: scroll; /* Allow scrolling */
-  }
+  no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 
-  .mobile\:overflow-x-scroll::-webkit-scrollbar {
-      display: none; /* Hide the scrollbar */
-  }
-
-  .mobile\:overflow-x-scroll {
-      -ms-overflow-style: none;  /* For Internet Explorer and Edge */
-      scrollbar-width: none;     /* For Firefox */
-  }}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+}
