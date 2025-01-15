@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<NavItem | null>(null);
 
     const toggleNavbar = () => {
-        setIsOpen(false);
+        setIsOpen(!isOpen);
         setIsOpen2(false);
         setIsOpen3(false);
     };
@@ -39,13 +39,11 @@ const Navbar: React.FC = () => {
 
     const toggleNavbar2 = () => {
         setIsOpen2(!isOpen2);
-        setIsOpen(false);
         setIsOpen3(false);
     };
 
     const toggleNavbar3 = () => {
         setIsOpen3(!isOpen3);
-        setIsOpen(false);
         setIsOpen2(false);
     };
 
@@ -186,7 +184,7 @@ const Navbar: React.FC = () => {
 
             {/* Navbar for Mobile */}
             <nav
-                className={`lg:hidden fixed top-30 left-0 z-50 bg-white w-full p-2 pb-4 overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}
+                className={`lg:hidden fixed top-30 left-0 z-50 bg-white w-full p-2 pb-4 overflow-y-auto transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}
             >
                 <ul className="flex flex-col items-center gap-5 mobile:items-start tablet:items-start">
                     {navdata.map((item, index) => (
@@ -236,7 +234,7 @@ const Navbar: React.FC = () => {
 
             {/* Submenu for Mobile */}
             <nav
-                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen2 ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-500 ease-in-out ${isOpen2 ? 'translate-x-0' : 'translate-x-full'}`}
                 style={{ maxHeight: '80vh' }}
             >
                 <section className="flex justify-between items-center p-5 tablet:text-xl">
@@ -282,7 +280,7 @@ const Navbar: React.FC = () => {
 
             {/* Third-level Submenu for Mobile */}
             <nav
-                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-300 ease-in-out ${isOpen3 ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`lg:hidden fixed top-30 right-0 z-50 bg-white w-full overflow-y-auto transform transition-transform duration-500 ease-in-out ${isOpen3 ? 'translate-x-0' : 'translate-x-full'}`}
                 style={{ maxHeight: '80vh' }}
             >
                 <section className="flex justify-between items-center p-5">
