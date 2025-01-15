@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<NavItem | null>(null);
 
     const toggleNavbar = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(false);
         setIsOpen2(false);
         setIsOpen3(false);
     };
