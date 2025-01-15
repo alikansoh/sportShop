@@ -31,3 +31,17 @@
   scrollbar-width: thin; /* Use thin scrollbar for Firefox */
   scrollbar-color: #134aa3 #e5e7eb; /* Firefox custom scrollbar colors */
 }
+/* Hide the scrollbar but keep the scrolling functionality */
+@media (max-width: 640px) {
+  .mobile\:overflow-x-scroll {
+      overflow-x: scroll; /* Allow scrolling */
+  }
+
+  .mobile\:overflow-x-scroll::-webkit-scrollbar {
+      display: none; /* Hide the scrollbar */
+  }
+
+  .mobile\:overflow-x-scroll {
+      -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+      scrollbar-width: none;     /* For Firefox */
+  }}
