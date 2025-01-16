@@ -26,13 +26,18 @@ const Navbar: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<NavItem | null>(null);
 
     const toggleNavbar = () => {
-        setIsOpen(!isOpen);
+        if (isOpen2 || isOpen3) {
+            setIsOpen2(false);
+
+        } else {
+            setIsOpen(!isOpen);
+        }
         setIsOpen2(false);
         setIsOpen3(false);
     };
 
     const toggleback = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(true);
         setIsOpen2(false);
         setIsOpen3(false);
     };
@@ -40,11 +45,13 @@ const Navbar: React.FC = () => {
     const toggleNavbar2 = () => {
         setIsOpen2(!isOpen2);
         setIsOpen3(false);
+        setIsOpen(false);
     };
 
     const toggleNavbar3 = () => {
         setIsOpen3(!isOpen3);
         setIsOpen2(false);
+
     };
 
     const showUnderNav = () => {
@@ -56,7 +63,7 @@ const Navbar: React.FC = () => {
     };
 
     const toggleback1 = () => {
-        setIsOpen3(!isOpen3);
+        setIsOpen3(false);
         setIsOpen(false);
         setIsOpen2(true);
     };
