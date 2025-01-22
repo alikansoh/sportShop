@@ -31,6 +31,7 @@ const Navbar: React.FC = () => {
 
         } else {
             setIsOpen(!isOpen);
+            ;
         }
         setIsOpen2(false);
         setIsOpen3(false);
@@ -70,7 +71,7 @@ const Navbar: React.FC = () => {
 
     return (
         <div className="fixed top-0 left-0 right-0 z-50">
-            <div className="bg-black h-18 flex items-center px-3 justify-between flex-wrap tablet:gap-x-0 mobile:pt-2 tablet:pt-2">
+            <div className="bg-white h-18 flex items-center px-3 justify-between flex-wrap tablet:gap-x-0 mobile:pt-2 tablet:pt-2">
                 {/* Burger Icon */}
                 <Image
                     src={isOpen || isOpen2 || isOpen3 ? 'images/x.svg' : 'images/burger.svg'}
@@ -83,19 +84,20 @@ const Navbar: React.FC = () => {
 
                 {/* Logo */}
                 <Image
-                    src="/images/logo.svg"
+                    src="/images/logo.png"
                     alt="logo"
-                    className="h-10 tablet:h-12"
-                    width={100}
-                    height={100}
+                    className="h-[5rem] w-[15rem] mobile:h-[3rem] mobile:w-[7rem] tablet:h-[3rem] tablet:w-[10rem]"
+                    width={700}
+                    height={400}
                 />
+
 
                 {/* Search Input */}
                 <div className="relative lg:w-[37%] mobile:order-2 py-4 mobile:py-2 tablet:order-2 tablet:w-full mobile:w-full">
                     <input
                         type="text"
                         placeholder="Search Products or Categories"
-                        className="pl-9 py-2 border border-gray-300 rounded-[0.25rem] w-full focus:outline-none focus:bg-white bg-gray-100"
+                        className="pl-9 py-2 border border-black rounded-[0.25rem] w-full focus:outline-none focus:bg-white bg-gray-100"
                     />
                     <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
                         <svg
