@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
                 <Image
                     src="/images/logo.png"
                     alt="logo"
-                    className="h-[5rem] w-[15rem] mobile:h-[3rem] mobile:w-[7rem] tablet:h-[3rem] tablet:w-[10rem]"
+                    className="h-[5rem] w-[15rem] mobile:h-[5rem] mobile:w-[9rem] tablet:h-[3rem] tablet:w-[10rem]"
                     width={700}
                     height={400}
                 />
