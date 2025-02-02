@@ -39,15 +39,21 @@
   -webkit-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
   position: relative;
-  }
-  .swiper-pagination-bullet {
+}
+.swiper-pagination-bullet {
   background: #4f46e5;
-  }
-  /* For hiding the scrollbar */
+}
+/* For hiding the scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* for IE and Edge */
-  scrollbar-width: none;  /* for Firefox */
+  -ms-overflow-style: none; /* for IE and Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+.slick-next:before {
+  content: "" !important;
+}
+.slick-prev:before {
+  content: "" !important;
 }
