@@ -32,3 +32,22 @@
   scrollbar-color: #134aa3 #e5e7eb; /* Firefox custom scrollbar colors */
 }
 
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+  }
+  .swiper-pagination-bullet {
+  background: #4f46e5;
+  }
+  /* For hiding the scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* for IE and Edge */
+  scrollbar-width: none;  /* for Firefox */
+}

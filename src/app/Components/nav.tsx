@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
                 <Image
                     src="/images/logo.png"
                     alt="logo"
-                    className="h-[5rem] w-[15rem] mobile:h-[2rem] mobile:w-[8rem] mobile:pt-1 tablet:h-[3rem] tablet:w-[10rem]"
+                    className="h-[2.5rem] w-[15rem] mobile:h-[2rem] mobile:w-[8rem] mobile:pt-1 tablet:h-[2rem] tablet:w-[10rem]"
                     width={800}
                     height={600}
                 />
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        className="w-8 h-8 text-white mobile:hidden"
+                        className="w-8 h-8 text-black-500 mobile:hidden"
                     >
                         <path
                             strokeLinecap="round"
@@ -151,11 +151,11 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Navbar for Large Screens */}
-            <nav className="hidden lg:flex items-center justify-center w-full text-white bg-gray-800">
+            <nav className="hidden lg:flex items-center  justify-center  w-full text-white bg-gray-800 text-md between:text-xs">
                 {navdata.map((item, index) => (
                     <ul key={index} className="">
                         <li
-                            className="relative group w-auto"
+                            className={` ${item.name === 'Deals' || item.name === 'Deals' ? 'bg-orange-600 text-white' : ''} re`}
                             onMouseLeave={hideUnderNav}
                             onMouseEnter={() => {
                                 setSelectedItem(item as unknown as NavItem);
@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
                                 href="#"
                                 className="flex p-3 px-7 m-0 lg:inline-flex items-center text-white hover:bg-black hover:text-white"
                             >
-                                <span className="ml-4">{item.name}</span>
+                                <span className="">{item.name}</span>
                             </a>
                         </li>
                         <div
@@ -199,7 +199,7 @@ const Navbar: React.FC = () => {
                     {navdata.map((item, index) => (
                         <li
                             key={index}
-                            className={`relative group w-full ${item.name === 'Sale' || item.name === 'sale' ? 'bg-red-600 text-white' : ''}`}
+                            className={`relative group w-full ${item.name === 'Deals' || item.name === 'Deals' ? 'bg-orange-600 text-white' : ''}`}
                             onClick={() => {
                                 toggleNavbar2();
                                 setSelectedDropdown(item as unknown as SubCategory);
@@ -209,13 +209,7 @@ const Navbar: React.FC = () => {
                                 href="#"
                                 className="flex p-4 lg:inline-flex items-center border-b border-b-gray-200"
                             >
-                                {item.image && (
-                                    <Image
-                                        src={item.image}
-                                        alt={item.name}
-                                        className="w-[2.5rem] h-[2.5rem] rounded-sm tablet:w-[3.5rem] tablet:h-[3.5rem]"
-                                    />
-                                )}
+
                                 <span className="ml-4 font-bold text-sm tablet:text-xl">
                                     {item.name}
                                 </span>

@@ -16,6 +16,7 @@ export default {
     screens: {
       mobile: { max: "600px" },
       tablet: { min: "601px", max: "1024px" },
+      between: { min: "1024px", max: "1200px" },
       lg: { min: "1025px" },
     }
   },
