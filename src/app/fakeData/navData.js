@@ -1,8 +1,4 @@
 // Import images at the top of the file
-import menImage from "../assets/men.jpg";
-import womenImage from "../assets/women.jpg";
-import kidsImage from "../assets/kids.jpg";
-import sportImage from "../assets/sport.jpg";
 
 const navigationData = [
   {
