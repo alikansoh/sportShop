@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import navdata from '../fakeData/navData';
 
+
 interface SubCategory {
     name: string;
     subCategories?: SubCategory[];
