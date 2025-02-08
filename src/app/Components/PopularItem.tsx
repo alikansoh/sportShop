@@ -14,8 +14,9 @@ const PopularItem = () => {
   ];
 
   return (
-    <div className="mt-10">
-      <h1 className="text-3xl font-semibold mobile:text-xl text-center">Popular Products</h1>
+    <div className="mt-10 ">
+      <h1 className="text-3xl font-semibold mobile:text-xl text-center  px-5 ">Popular Products</h1>
+      <h2 className=" font-medium px-5 text-lg text-orange-600 text-center">Discover our top-rated products</h2>
       <Carousel items={popularProducts} />
     </div>
   );

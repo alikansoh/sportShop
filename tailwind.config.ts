@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ['Roboto', 'Arial', 'sans-serif'],
+
+      }
     },
     screens: {
       mobile: { max: "600px" },

@@ -57,3 +57,23 @@
 .slick-prev:before {
   content: "" !important;
 }
+
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+.swiper-pagination-bullet {
+  background: #4f46e5;
+}
+/* styles/globals.css */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/Fonts/static/Roboto.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

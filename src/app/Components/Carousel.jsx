@@ -93,13 +93,13 @@ const Carousel = ({ items }) => {
           <Slider {...settings}>
             {items.map((item, index) => (
               <div key={index}>
-                <div className="relative flex flex-col items-center border rounded-lg mx-2 h-[23.5rem] lg:h-[25rem]">
+                <div className="relative flex flex-col items-center border rounded-lg mx-2 h-[23rem]  lg:h-[24rem] ">
                   <img
                     width={300}
                     height={400}
                     src={item.image}
                     alt={item.name}
-                    className="rounded-t-lg w-[10rem] pt-2"
+                    className="rounded-t-lg w-[10rem] mobile:h-[11rem] pt-2"
                   />
                   {/* Rating Section */}
                   <div className="flex justify-center items-center mt-3">
@@ -112,8 +112,8 @@ const Carousel = ({ items }) => {
                     </span>
                   </div>
 
-                  <div className="flex flex-col gap-2 px-2 py-4 w-22">
-                    <div className="text-sm mobile:text-xs mb-3 ">
+                  <div className="flex flex-col gap-2 px-2  w-22">
+                    <div className="text-sm mobile:text-sm mb-3 ">
                       {item.name}
                     </div>
                     <p className="absolute bottom-1 left-[50%] transform -translate-x-1/2 text-orange-500 font-bold mobile:text-sm text-center">
