@@ -75,7 +75,7 @@ const Deal = () => {
 
     const [visibleIndex, setVisibleIndex] = useState(0);
     const [cardWidth, setCardWidth] = useState(220); // Default card width
-    const scrollContainerRef = useRef(document.createElement('div'));
+    const scrollContainerRef = useRef(null);
 
     useEffect(() => {
         const updateCardWidth = () => {
