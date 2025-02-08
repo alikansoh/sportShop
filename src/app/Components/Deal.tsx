@@ -75,7 +75,7 @@ const Deal = () => {
 
     const [visibleIndex, setVisibleIndex] = useState(0);
     const [cardWidth, setCardWidth] = useState(220); // Default card width
-    const scrollContainerRef = useRef(null);
+    const scrollContainerRef = useRef(document.createElement('div'));
 
     useEffect(() => {
         const updateCardWidth = () => {
@@ -106,7 +106,7 @@ const Deal = () => {
     };
 
     const handlePrev = () => {
-        if (visibleIndex > 0) {
+        if (visibleIndex > 0 ) {
             setVisibleIndex(visibleIndex - 1);
             scrollContainerRef.current.scrollBy({ left: -scrollOffset, behavior: 'smooth' });
         }
