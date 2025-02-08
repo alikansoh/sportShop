@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/aboutus.tsx", "src/app/Components/Carousel.jsx", "src/app/Components/PopularProductCard.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/aboutus.tsx", "src/app/Components/Carousel.jsx", "src/app/Components/PopularProductCard.jsx", "src/app/Components/Deal.jsx"],
   "exclude": ["node_modules"]
 }
