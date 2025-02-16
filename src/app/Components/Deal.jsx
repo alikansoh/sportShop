@@ -168,7 +168,7 @@ const Carousel = () => {
                   height={400}
                   src={item.image}
                   alt={item.name}
-                  className="rounded-t-lg w-[60%] h-[300px] "
+                  className="rounded-t-lg w-[70%] h-[300px] "
                 />
                 <div className="p-4 flex flex-col gap-3">
                   <div className="text-lg text-center font-semibold">{item.name}</div>
