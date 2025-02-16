@@ -10,7 +10,6 @@ export default function Home() {
       <PopularItem />
 
       <Deal />
-      <Deal />
 
 
 

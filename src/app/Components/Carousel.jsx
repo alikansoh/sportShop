@@ -46,7 +46,6 @@ const SliderArrow = ({ className, style, onClick, position, back }) => {
 
 const Carousel = ({ items }) => {
   const settings = {
-    dots: true,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -58,7 +57,6 @@ const Carousel = ({ items }) => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -77,7 +75,6 @@ const Carousel = ({ items }) => {
         },
       },
     ],
-    autoplay: true,
     speed: 1000,
     autoplaySpeed: 3000,
     cssEase: "linear",
