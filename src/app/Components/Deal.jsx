@@ -87,7 +87,8 @@ const Carousel = () => {
       rating: 4,
       price: "$999.99",
       oldPrice: "$1299.99",
-      description: "Limited-time offer: Save $300 on this premium refrigerator!",
+      description:
+        "Limited-time offer: Save $300 on this premium refrigerator!",
     },
     {
       id: 2,
@@ -105,16 +106,19 @@ const Carousel = () => {
       rating: 3,
       price: "$399.99",
       oldPrice: "$499.99",
-      description: "Special offer: Dyson vacuum for $100 off the original price!",
+      description:
+        "Special offer: Dyson vacuum for $100 off the original price!",
     },
     {
       id: 4,
       name: "Whirlpool Microwave Oven",
-      image: "https://via.placeholder.com/300x400?text=Whirlpool+Microwave+Oven",
+      image:
+        "https://via.placeholder.com/300x400?text=Whirlpool+Microwave+Oven",
       rating: 5,
       price: "$129.99",
       oldPrice: "$179.99",
-      description: "Save $50 on this Whirlpool microwave, the perfect kitchen addition!",
+      description:
+        "Save $50 on this Whirlpool microwave, the perfect kitchen addition!",
     },
     {
       id: 5,
@@ -123,16 +127,19 @@ const Carousel = () => {
       rating: 4,
       price: "$379.99",
       oldPrice: "$429.99",
-      description: "Exclusive offer: Get $50 off KitchenAid's top-rated stand mixer!",
+      description:
+        "Exclusive offer: Get $50 off KitchenAid's top-rated stand mixer!",
     },
     {
       id: 6,
       name: "Breville Espresso Machine",
-      image: "https://via.placeholder.com/300x400?text=Breville+Espresso+Machine",
+      image:
+        "https://via.placeholder.com/300x400?text=Breville+Espresso+Machine",
       rating: 5,
       price: "$599.99",
       oldPrice: "$799.99",
-      description: "Enjoy gourmet coffee at home with $200 off the Breville Espresso Machine!",
+      description:
+        "Enjoy gourmet coffee at home with $200 off the Breville Espresso Machine!",
     },
     {
       id: 7,
@@ -150,14 +157,19 @@ const Carousel = () => {
       rating: 5,
       price: "$199.99",
       oldPrice: "$249.99",
-      description: "Get $50 off the Bose Smart Speaker - Incredible sound, incredible price!",
+      description:
+        "Get $50 off the Bose Smart Speaker - Incredible sound, incredible price!",
     },
   ];
 
   return (
     <div className="py-5">
-        <h1 className="text-3xl font-semibold mobile:text-xl text-center  px-5 ">Our offers</h1>
-        <h2 className=" font-medium px-5 text-lg text-orange-600 text-center">Discover our Best offers for you </h2>
+      <h1 className="text-3xl font-semibold mobile:text-xl text-center  px-5 ">
+        Our offers
+      </h1>
+      <h2 className=" font-medium px-5 text-lg text-orange-600 text-center">
+        Discover our amazing offers
+      </h2>
       <div className="mx-3 mt-10">
         <Slider {...settings}>
           {items.map((item) => (
@@ -171,12 +183,18 @@ const Carousel = () => {
                   className="rounded-t-lg w-[70%] h-[300px] "
                 />
                 <div className="p-4 flex flex-col gap-3">
-                  <div className="text-lg text-center font-semibold">{item.name}</div>
+                  <div className="text-lg text-center font-semibold">
+                    {item.name}
+                  </div>
                   <div className="flex justify-between text-base text-gray-500">
                     <p className="line-through">{item.oldPrice}</p>
-                    <p className="text-orange-500 font-bold text-lg">{item.price}</p>
+                    <p className="text-orange-500 font-bold text-lg">
+                      {item.price}
+                    </p>
                   </div>
-                  <p className="text-base text-red-600 mt-2">{item.description}</p>
+                  <p className="text-base text-red-600 mt-2">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             </div>
